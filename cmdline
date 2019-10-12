@@ -1,0 +1,22 @@
+#######################
+#command line examples:
+####################### 
+
+# print 'Hello World' on the screen,
+# same as what codeEx_simplest.pl tries to do
+perl -e 'print "Hello World\n"' 
+
+# implicit look, print source code:
+perl -n -e  code1.pl 
+
+# implicit loop, print code with line number 
+perl -n -e 'print "$. - $_"' code1.pl 
+
+# implicit loop, implicit print, using $_ new assignment
+perl -p -n -e '$_="$. - $_"' code1.pl 
+
+# implicit loop, print code with line number
+perl -ne 'print "$. - $_" unless /^#/' code1.pl 
+
+# print all lines that are starting with '#' (comment line)
+perl -ne 'print "$. - $_" if /^#/' code1.pl  
